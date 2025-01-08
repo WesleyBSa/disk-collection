@@ -1,139 +1,308 @@
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  h1, h2 {
-    text-align: center;
-  }
-  
-  form {
-    max-width: 500px;
-    margin: 20px auto;
-    padding: 20px;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    background-color: #f9f9f9;
-  }
-  
-  form div {
-    margin-bottom: 10px;
-  }
-  
-  form label {
-    display: block;
-    margin-bottom: 5px;
-    font-weight: bold;
-  }
-  
-  form input {
-    width: 100%;
-    padding: 8px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-  }
-  .btn {
-    --color: #00A97F;
-    --color2: rgb(10, 25, 30);
-    padding: 0.8em 1.75em;
-    background-color: transparent;
-    border-radius: 6px;
-    border: 0.3px solid var(--color);
-    transition: 0.5s;
-    position: relative;
-    overflow: hidden;
-    cursor: pointer;
-    z-index: 1;
-    font-weight: 300;
-    font-size: 17px;
-    font-family: 'Roboto', 'Segoe UI', sans-serif;
-    text-transform: uppercase;
-    color: var(--color);
-  }
-  
-  .btn::after,
-  .btn::before {
-    content: '';
-    display: block;
-    height: 100%;
-    width: 100%;
-    transform: skew(90deg) translate(-50%, -50%);
-    position: absolute;
-    inset: 50%;
-    left: 25%;
-    z-index: -1;
-    transition: 0.5s ease-out;
-    background-color: var(--color);
-  }
-  
-  .btn::before {
-    top: -50%;
-    left: -25%;
-    transform: skew(90deg) rotate(180deg) translate(-50%, -50%);
-  }
-  
-  .btn:hover::before {
-    transform: skew(45deg) rotate(180deg) translate(-50%, -50%);
-  }
-  
-  .btn:hover::after {
-    transform: skew(45deg) translate(-50%, -50%);
-  }
-  
-  .btn:hover {
-    color: var(--color2);
-  }
-  
-  .btn:active {
-    filter: brightness(0.7);
-    transform: scale(0.98);
-  }
-  
-  header {
-    background-color: white;
-    border-bottom: 1px solid #ddd;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  }
-  
-  nav .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 16px;
-  }
-  
-  .logo {
-    display: flex;
-    align-items: center;
-    text-decoration: none;
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: black;
-  }
-  
-  .logo img {
-    height: 40px;
-    margin-right: 8px;
-  }
-  
-  .nav-links {
-    display: flex;
-    list-style: none;
-    gap: 20px;
-    padding: 0;
-    margin: 0;
-  }
-  
-  .nav-links a {
-    text-decoration: none;
-    color: black;
-    font-size: 1rem;
-    transition: color 0.3s;
-  }
-  
-  .nav-links a:hover {
-    color: blue;
-  }
-  
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+h1, h2 {
+  text-align: center;
+}
+
+form {
+  max-width: 500px;
+  margin: 20px auto;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+}
+
+form div {
+  margin-bottom: 10px;
+}
+
+form label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+form input {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.btn {
+  --color:rgb(0, 73, 169);
+  --color2: rgb(193, 233, 247);
+  padding: 0.8em 1.75em;
+  background-color: transparent;
+  border-radius: 6px;
+  border: 0.3px solid var(--color);
+  transition: 0.5s;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  z-index: 1;
+  font-weight: 300;
+  font-size: 17px;
+  font-family: 'Roboto', 'Segoe UI', sans-serif;
+  text-transform: uppercase;
+  color: var(--color);
+}
+
+.btn::after,
+.btn::before {
+  content: '';
+  display: block;
+  height: 100%;
+  width: 100%;
+  transform: skew(90deg) translate(-50%, -50%);
+  position: absolute;
+  inset: 50%;
+  left: 25%;
+  z-index: -1;
+  transition: 0.5s ease-out;
+  background-color: var(--color);
+}
+
+.btn::before {
+  top: -50%;
+  left: -25%;
+  transform: skew(90deg) rotate(180deg) translate(-50%, -50%);
+}
+
+.btn:hover::before {
+  transform: skew(45deg) rotate(180deg) translate(-50%, -50%);
+}
+
+.btn:hover::after {
+  transform: skew(45deg) translate(-50%, -50%);
+}
+
+.btn:hover {
+  color: var(--color2);
+}
+
+.btn:active {
+  filter: brightness(0.7);
+  transform: scale(0.98);
+}
+
+header {
+  background-color: white;
+  border-bottom: 1px solid #ddd;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+nav .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: black;
+}
+
+.logo img {
+  height: 40px;
+  margin-right: 8px;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 20px;
+  padding: 0;
+  margin: 0;
+}
+
+.nav-links li {
+  margin: 0;
+}
+
+.nav-links a {
+  --color:rgb(24, 103, 207);
+  font-family: inherit;
+  display: inline-block;
+  width: 140px; 
+  height: 2.6em; 
+  line-height: 2.5em;
+  margin: 20px;
+  position: relative;
+  cursor: pointer;
+  overflow: hidden;
+  border: 2px solid var(--color);
+  transition: color 0.5s;
+  z-index: 1;
+  font-size: 17px;
+  border-radius: 6px;
+  font-weight: 500;
+  color: var(--color);
+  text-decoration: none; 
+  text-align: center; 
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+}
+
+.nav-links a:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  background: var(--color);
+  height: 150px;
+  width: 200px;
+  border-radius: 50%;
+  top: 100%;
+  left: 100%;
+  transition: all 0.7s;
+}
+
+.nav-links a:hover {
+  color: #fff; 
+}
+
+.nav-links a:hover:before {
+  top: -30px;
+  left: -30px;
+}
+
+.nav-links a:active:before {
+  background: rgb(10, 75, 160);
+  transition: background 0s;
+}
+
+button.delete-button {
+  width: 150px;
+  height: 50px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  background: #e62222;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.15);
+}
+
+button.delete-button, 
+button.delete-button span {
+  transition: 200ms;
+}
+
+button.delete-button .text {
+  transform: translateX(35px);
+  color: white;
+  font-weight: bold;
+}
+
+button.delete-button .icon {
+  position: absolute;
+  border-left: 1px solid #c41b1b;
+  transform: translateX(110px);
+  height: 40px;
+  width: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+button.delete-button svg {
+  width: 15px;
+  fill: #eee;
+}
+
+button.delete-button:hover {
+  background: #ff3636;
+}
+
+button.delete-button:hover .text {
+  color: transparent;
+}
+
+button.delete-button:hover .icon {
+  width: 150px;
+  border-left: none;
+  transform: translateX(0);
+}
+
+button.delete-button:focus {
+  outline: none;
+}
+
+button.delete-button:active .icon svg {
+  transform: scale(0.8);
+}
+
+button.edit-button {
+  width: 150px;
+  height: 50px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  background: rgb(253, 250, 51);
+  border: none;
+  border-radius: 5px;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.15);
+}
+
+button.edit-button, 
+button.edit-button span {
+  transition: 200ms;
+}
+
+button.edit-button .text {
+  transform: translateX(35px);
+  color: black;
+  font-weight: bold;
+}
+
+button.edit-button .icon {
+  position: absolute;
+  border-left: 1px solid rgb(211, 211, 51);
+  transform: translateX(110px);
+  height: 40px;
+  width: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+button.edit-button svg {
+  width: 15px;
+  fill: black;
+}
+
+button.edit-button:hover {
+  background: rgb(255, 255, 102);
+}
+
+button.edit-button:hover .text {
+  color: transparent;
+}
+
+button.edit-button:hover .icon {
+  width: 150px;
+  border-left: none;
+  transform: translateX(0);
+}
+
+button.edit-button:focus {
+  outline: none;
+}
+
+button.edit-button:active .icon svg {
+  transform: scale(0.8);
+}
+
+

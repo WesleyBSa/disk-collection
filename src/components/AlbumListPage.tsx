@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import Header from '../components/Header';
 import { Album } from '../types/album';
 
 const AlbumListPage: React.FC = () => {
@@ -11,7 +12,8 @@ const AlbumListPage: React.FC = () => {
 
   return (
     <div style={{ fontFamily: 'Arial, sans-serif', padding: '1rem', backgroundColor: '#f9f9f9' }}>
-      <h1 style={{ textAlign: 'center', marginBottom: '2rem', color: '#333' }}>Lista de Álbuns</h1>
+      <Header />
+      <h1 style={{ textAlign: 'center', marginBottom: '2rem', color: '#333' }}>Album Collection</h1>
       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr))', gap: '1rem' }}>
         {albums.length > 0 ? (
           albums.map((album) => (
@@ -28,9 +30,9 @@ const AlbumListPage: React.FC = () => {
               <h3 style={{ marginBottom: '0.5rem', color: '#007bff' }}>
                 {album.bandName} - {album.albumName}
               </h3>
-              <p><strong>Ano de Lançamento:</strong> {album.releaseYear}</p>
-              <p><strong>Nacionalidade:</strong> {album.nationality}</p>
-              <p><strong>Valor:</strong> R$ {album.price}</p>
+              <p><strong>Release Year:</strong> {album.releaseYear}</p>
+              <p><strong>Nationality:</strong> {album.nationality}</p>
+              <p><strong>Price:</strong> ${album.price}</p>
             </div>
           ))
         ) : (

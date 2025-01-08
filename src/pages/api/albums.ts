@@ -1,4 +1,3 @@
-//API para operações CRUD
 import { NextApiRequest, NextApiResponse } from 'next';
 import { Album } from '../../types/album';
 

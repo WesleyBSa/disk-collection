@@ -1,4 +1,3 @@
-//Funções para gerenciar os discos
 import { Album } from '../types/album';
 
 const API_URL = '/api/albums';

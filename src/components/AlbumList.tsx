@@ -18,12 +18,15 @@ const AlbumList: React.FC<AlbumListProps> = ({ albums, onEdit, onDelete }) => {
   return (
     <div>
       {albums.map((album) => (
-        <div key={album.id}>
+        <div key={album.id} style={{ marginBottom: '1rem', padding: '10px', border: '1px solid #ddd', borderRadius: '6px' }}>
           <h3 onClick={() => handleOpenModal(album)}>
             {album.bandName} - {album.albumName}
           </h3>
-          <button onClick={() => onEdit(album)}>Edit</button>
-          <button onClick={() => album.id && onDelete(album.id)}>Delete</button>
+          <p><strong>Release Year:</strong> {album.releaseYear}</p>
+          <p><strong>Nationality:</strong> {album.nationality}</p>
+          <p><strong>Price:</strong> ${album.price}</p>
+          <button className="btn edit" onClick={() => onEdit(album)}>Edit</button>
+          <button className="btn delete" onClick={() => album.id && onDelete(album.id)}>Delete</button>
         </div>
       ))}
       {selectedAlbum && <Modal album={selectedAlbum} onClose={() => setSelectedAlbum(null)} />}
