@@ -1,7 +1,17 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Link from 'next/link';
 
 const Header = () => {
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setMenuOpen(!menuOpen);
+  };
+
+  const closeMenu = () => {
+    setMenuOpen(false);
+  };
+
   return (
     <header>
       <nav>
@@ -10,15 +20,27 @@ const Header = () => {
             <img src="vinyl-record-icon-1.png" alt="Logo" />
             <span>DISK COLLECTION</span>
           </a>
-          <ul className="nav-links">
+          <button className="hamburger" onClick={toggleMenu}>
+            <div className="bar"></div>
+            <div className="bar"></div>
+            <div className="bar"></div>
+          </button>
+          <ul className={`nav-links ${menuOpen ? 'open' : ''}`}>
             <li>
-              <Link href="/albums">Lista de Álbuns</Link>
+              <Link href="/albums" onClick={closeMenu}>Lista de Álbuns</Link>
             </li>
             <li>
-              <Link href="/admin">Admin</Link>
+              <Link href="/admin" onClick={closeMenu}>Admin</Link>
             </li>
             <li>
-              <a href="https://github.com" target="_blank" rel="noopener noreferrer">Github</a>
+              <a
+                href="https://github.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={closeMenu}
+              >
+                Github
+              </a>
             </li>
           </ul>
         </div>

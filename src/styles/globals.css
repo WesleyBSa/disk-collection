@@ -35,6 +35,53 @@ form input {
   border-radius: 4px;
 }
 
+select {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  margin-bottom: 15px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #fff;
+  font-size: 16px;
+  color: #333;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  appearance: none; 
+  cursor: pointer;
+}
+
+select::-ms-expand {
+  display: none;
+}
+
+.select-wrapper {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+}
+
+.select-wrapper::after {
+  content: '▼';
+  font-size: 14px;
+  color: #555;
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none; 
+}
+
+select:hover {
+  border-color: #007bff;
+}
+
+select:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+
 .btn {
   --color:rgb(0, 73, 169);
   --color2: rgb(193, 233, 247);
@@ -183,6 +230,54 @@ nav .container {
   transition: background 0s;
 }
 
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 25px;
+  height: 20px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.hamburger .bar {
+  height: 3px;
+  width: 100%;
+  background-color: rgb(24, 103, 207);
+  border-radius: 3px;
+}
+
+.nav-links {
+  transition: transform 0.3s ease-in-out;
+}
+
+.nav-links.open {
+  transform: translateX(0);
+}
+
+@media (max-width: 768px) {
+  .nav-links {
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background-color: white;
+    width: 200px;
+    height: 100vh;
+    align-items: center;
+    gap: 10px;
+    transform: translateX(100%);
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
+    z-index: 9;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+}
+
 button.delete-button {
   width: 150px;
   height: 50px;
@@ -304,5 +399,3 @@ button.edit-button:focus {
 button.edit-button:active .icon svg {
   transform: scale(0.8);
 }
-
-
